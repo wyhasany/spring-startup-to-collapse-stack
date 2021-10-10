@@ -79,10 +79,13 @@ curl localhost:8091/actuator/startup > startup.json
 ```
 
 #### Download spring-startup-to-collapse-stack converter
+```shell
+curl -L https://github.com/wyhasany/spring-startup-to-collapse-stack/releases/download/0.1-alpha/converter-spring-boot-startup.jar --output converter-spring-boot-startup.jar
+```
 
 #### Convert `startup.json` to collapse format
 
-Keep in mind to use JDK 17
+Keep in mind to use JDK 16
 ```shell
 java -jar converter-spring-boot-startup.jar startup.json startup.collapse
 ```
