@@ -1,0 +1,38 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '7.1.0'
+    id 'java'
+}
+
+group 'com.github.wyhasany'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.13.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.0'
+    testImplementation 'org.assertj:assertj-core:3.21.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+task testJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'com.github.wyhasany.Main'
+    }
+}
+
+shadowJar {
+    manifest {
+        inheritFrom project.tasks.testJar.manifest
+    }
+    archivesBaseName = 'converter-spring-boot-startup'
+    archiveClassifier = ''
+    archiveVersion = ''
+}
+
+test {
+    useJUnitPlatform()
+}

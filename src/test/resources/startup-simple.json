@@ -1,0 +1,142 @@
+{
+  "springBootVersion": "2.5.4",
+  "timeline": {
+    "startTime": "2021-10-09T17:35:50.813987Z",
+    "events": [
+      {
+        "endTime": "2021-10-09T17:35:50.899008Z",
+        "duration": 0.021545,
+        "startupStep": {
+          "name": "spring.boot.application.starting",
+          "id": 0,
+          "tags": [
+            {
+              "key": "mainApplicationClass",
+              "value": "tech.viacom.neutron.Application"
+            }
+          ]
+        },
+        "startTime": "2021-10-09T17:35:50.877463Z"
+      },
+      {
+        "endTime": "2021-10-09T17:35:51.331272Z",
+        "duration": 0.324707,
+        "startupStep": {
+          "name": "spring.boot.application.environment-prepared",
+          "id": 1,
+          "tags": []
+        },
+        "startTime": "2021-10-09T17:35:51.006565Z"
+      },
+      {
+        "endTime": "2021-10-09T17:35:51.403893Z",
+        "duration": 0.000447,
+        "startupStep": {
+          "name": "spring.boot.application.context-prepared",
+          "id": 2,
+          "tags": []
+        },
+        "startTime": "2021-10-09T17:35:51.403446Z"
+      },
+      {
+        "endTime": "2021-10-09T17:35:51.452220Z",
+        "duration": 0.001596,
+        "startupStep": {
+          "name": "spring.boot.application.context-loaded",
+          "id": 3,
+          "tags": []
+        },
+        "startTime": "2021-10-09T17:35:51.450624Z"
+      },
+      {
+        "endTime": "2021-10-09T17:35:51.502522Z",
+        "duration": 0.001747,
+        "startupStep": {
+          "name": "spring.beans.instantiate",
+          "id": 7,
+          "tags": [
+            {
+              "key": "beanName",
+              "value": "org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory"
+            }
+          ],
+          "parentId": 6
+        },
+        "startTime": "2021-10-09T17:35:51.500775Z"
+      },
+      {
+        "endTime": "2021-10-09T17:35:51.532255Z",
+        "duration": 0.048823,
+        "startupStep": {
+          "name": "spring.beans.instantiate",
+          "id": 6,
+          "tags": [
+            {
+              "key": "beanName",
+              "value": "org.springframework.context.annotation.internalConfigurationAnnotationProcessor"
+            },
+            {
+              "key": "beanType",
+              "value": "interface org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor"
+            }
+          ],
+          "parentId": 5
+        },
+        "startTime": "2021-10-09T17:35:51.483432Z"
+      },
+      {
+        "endTime": "2021-10-09T17:35:55.074794Z",
+        "duration": 3.533156,
+        "startupStep": {
+          "name": "spring.context.config-classes.parse",
+          "id": 9,
+          "tags": [
+            {
+              "key": "classCount",
+              "value": "588"
+            }
+          ],
+          "parentId": 8
+        },
+        "startTime": "2021-10-09T17:35:51.541638Z"
+      },
+      {
+        "endTime": "2021-10-09T17:35:55.095162Z",
+        "duration": 3.562824,
+        "startupStep": {
+          "name": "spring.context.beandef-registry.post-process",
+          "id": 8,
+          "tags": [
+            {
+              "key": "postProcessor",
+              "value": "org.springframework.context.annotation.ConfigurationClassPostProcessor@749c877b"
+            }
+          ],
+          "parentId": 5
+        },
+        "startTime": "2021-10-09T17:35:51.532338Z"
+      },
+      {
+        "endTime": "2021-10-09T17:36:00.460762Z",
+        "duration": 9.008485,
+        "startupStep": {
+          "name": "spring.context.refresh",
+          "id": 4,
+          "tags": []
+        },
+        "startTime": "2021-10-09T17:35:51.452277Z"
+      },
+      {
+        "endTime": "2021-10-09T17:35:55.474470Z",
+        "duration": 4.004094,
+        "startupStep": {
+          "name": "spring.context.beans.post-process",
+          "id": 5,
+          "tags": [],
+          "parentId": 4
+        },
+        "startTime": "2021-10-09T17:35:51.470376Z"
+      }
+    ]
+  }
+}

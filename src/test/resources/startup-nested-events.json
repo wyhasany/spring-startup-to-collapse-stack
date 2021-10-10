@@ -1,0 +1,29 @@
+{
+  "springBootVersion": "2.5.4",
+  "timeline": {
+    "startTime": "2021-10-09T17:35:50.813987Z",
+    "events": [
+      {
+        "endTime": "2021-10-09T17:36:00.460762Z",
+        "duration": 9.008485,
+        "startupStep": {
+          "name": "spring.context.refresh",
+          "id": 4,
+          "tags": []
+        },
+        "startTime": "2021-10-09T17:35:51.452277Z"
+      },
+      {
+        "endTime": "2021-10-09T17:35:55.474470Z",
+        "duration": 4.004094,
+        "startupStep": {
+          "name": "spring.context.beans.post-process",
+          "id": 5,
+          "tags": [],
+          "parentId": 4
+        },
+        "startTime": "2021-10-09T17:35:51.470376Z"
+      }
+    ]
+  }
+}
