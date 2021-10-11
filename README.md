@@ -14,7 +14,7 @@ Spring Boot allows to gather startup metrics since version
 [Spring Framework docs](https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#context-functionality-startup)).
 However there is lack of tool to visualize where our Spring Boot app spends time during the startup.
 Startup events could be gathered by JFR events and shown in JDK Mission Control:
-![img/jdk-mission-control.png](img.png)
+![img/jdk-mission-control.png](img/jdk-mission-control.png)
 or can be listed by actuator as a json:
 ```json
 {
