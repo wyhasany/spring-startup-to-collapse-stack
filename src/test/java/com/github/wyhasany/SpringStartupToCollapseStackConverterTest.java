@@ -13,10 +13,23 @@ class SpringStartupToCollapseStackConverterTest {
     private final SpringStartupToCollapseStackConverter converter = new SpringStartupToCollapseStackConverter();
 
     @Test
-    @DisplayName("converts Spring Boot json to collapse stack from one simple event")
-    void convertsSpringBootJsonToCollapseStack() throws IOException {
+    @DisplayName("converts Spring Boot 2.x json to collapse stack from one simple event")
+    void convertsSpringBoot2JsonToCollapseStack() throws IOException {
         // given
         var json = readClassPathResource("startup-one-event.json");
+
+        // when
+        var parsed = converter.parse(json);
+
+        // then
+        assertThat(parsed).isEqualTo("0_spring.boot.application.starting?mainApplicationClass=tech.viacom.neutron.Application 21545");
+    }
+
+    @Test
+    @DisplayName("converts Spring Boot 3.x json to collapse stack from one simple event")
+    void convertsSpringBoot3JsonToCollapseStack() throws IOException {
+        // given
+        var json = readClassPathResource("startup-one-event-spring3.json");
 
         // when
         var parsed = converter.parse(json);

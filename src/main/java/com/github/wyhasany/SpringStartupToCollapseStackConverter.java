@@ -1,22 +1,27 @@
 package com.github.wyhasany;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.github.wyhasany.model.Event;
+import com.github.wyhasany.model.StartupDto;
 
 import java.util.LinkedHashMap;
 import java.util.stream.Collectors;
 
 public class SpringStartupToCollapseStackConverter {
 
-    private static final String DELIMETER = "_";
-    ObjectMapper objectMapper = new ObjectMapper();
+    ObjectMapper objectMapper = new ObjectMapper()
+            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+            .registerModule(new JavaTimeModule());
 
     public String parse(String json) {
         try {
             var startupDto = objectMapper.readValue(json, StartupDto.class);
             var startup = startupDto.toStartup();
             var stackToSamples = new LinkedHashMap<String, Integer>();
-            for (StartupDto.Timeline.Event event : startup.sortedEvents()) {
+            for (Event event : startup.sortedEvents()) {
                 stackToSamples.put(startup.keyOf(event), event.samples());
                 if (event.hasParent()) {
                     stackToSamples.merge(

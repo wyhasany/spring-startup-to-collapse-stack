@@ -1,0 +1,23 @@
+{
+  "springBootVersion": "2.5.4",
+  "timeline": {
+    "startTime": "2021-10-09T17:35:50.813987Z",
+    "events": [
+      {
+        "endTime": "2021-10-09T17:35:50.899008Z",
+        "duration": "PT0.021545S",
+        "startupStep": {
+          "name": "spring.boot.application.starting",
+          "id": 0,
+          "tags": [
+            {
+              "key": "mainApplicationClass",
+              "value": "tech.viacom.neutron.Application"
+            }
+          ]
+        },
+        "startTime": "2021-10-09T17:35:50.877463Z"
+      }
+    ]
+  }
+}
