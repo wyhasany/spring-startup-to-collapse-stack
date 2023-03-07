@@ -11,9 +11,7 @@ repositories {
 }
 
 dependencies {
-    implementation libs.jackson.core
-    implementation libs.jackson.databind
-    implementation libs.jackson.jsr310
+    implementation libs.bundles.jackson
 
     testImplementation libs.test.assertj.core
     testImplementation libs.test.junit.api

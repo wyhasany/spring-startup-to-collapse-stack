@@ -17,6 +17,16 @@ public class SpringStartupToCollapseStackConverter {
             .registerModule(new JavaTimeModule());
 
     public String parse(String json) {
+        if (json.contains("spring_boot_version")) {
+            // objectMapper.setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);
+            // hack to support snake case until jackson 2.15 where they fix non default PropertyNamingStrategy for records
+            json = json.replace("spring_boot_version", "springBootVersion")
+                    .replace("startup_step", "startupStep")
+                    .replace("parent_id", "parentId")
+                    .replace("start_time", "startTime")
+                    .replace("end_time", "endTime");
+        }
+
         try {
             var startupDto = objectMapper.readValue(json, StartupDto.class);
             var startup = startupDto.toStartup();

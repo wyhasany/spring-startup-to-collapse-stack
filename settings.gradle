@@ -9,6 +9,12 @@ dependencyResolutionManagement {
             library("jackson.databind", "com.fasterxml.jackson.core", "jackson-databind").versionRef("jackson")
             library("jackson.jsr310", "com.fasterxml.jackson.datatype", "jackson-datatype-jsr310").versionRef("jackson")
 
+            bundle("jackson", [
+                    "jackson.core",
+                    "jackson.databind",
+                    "jackson.jsr310"
+            ])
+
             // Test Deps
             version("assertj", "3.24.2")
             version("junit", "5.9.2")
