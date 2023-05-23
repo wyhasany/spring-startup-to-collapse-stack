@@ -72,20 +72,22 @@ public class App {
 }
 ```
 
+If you have this project cloned, you can run `./capture.sh name` which will fetch the startup json, collapse it, and generate an html report named `name`. If necessary, it will also build this project and download async-profiler jar,
+
 #### Download startup json
 
 ```shell
-curl localhost:8091/actuator/startup > startup.json
+curl localhost:8080/actuator/startup > startup.json
 ```
 
 #### Download spring-startup-to-collapse-stack converter
 ```shell
-curl -L https://github.com/wyhasany/spring-startup-to-collapse-stack/releases/download/0.1-alpha/converter-spring-boot-startup.jar --output converter-spring-boot-startup.jar
+curl -L https://github.com/wyhasany/spring-startup-to-collapse-stack/releases/download/0.2-alpha/converter-spring-boot-startup.jar --output converter-spring-boot-startup.jar
 ```
 
 #### Convert `startup.json` to collapse format
 
-Keep in mind to use JDK 16
+Keep in mind to use JDK 17
 ```shell
 java -jar converter-spring-boot-startup.jar startup.json startup.collapse
 ```
@@ -93,7 +95,7 @@ java -jar converter-spring-boot-startup.jar startup.json startup.collapse
 #### Convert collapse format to HTML 5 Flame Graph
 ```shell
 # Download async-profiler's converter
-curl -L https://github.com/jvm-profiling-tools/async-profiler/releases/download/v2.5/converter.jar --output converter.jar
+curl -L https://github.com/jvm-profiling-tools/async-profiler/releases/download/v2.9/converter.jar --output converter.jar
 # convert to flame graph
 java -cp converter.jar FlameGraph startup.collapse output.html
 ```
